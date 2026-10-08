@@ -1,0 +1,35 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 18034
+  },
+  "deepseek": {
+    "base_url": "https://api.siliconflow.cn/v1",
+    "api_key": "YOUR_SILICONFLOW_API_KEY",
+    "model": "deepseek-ai/DeepSeek-V4-Flash",
+    "thinking": "enabled",
+    "reasoning_effort": "medium",
+    "max_tokens": 8192,
+    "stream": true,
+    "timeout_seconds": 300,
+    "max_retries": 2,
+    "retry_delay_seconds": 2,
+    "system_prompt": "你是练秋湖数据问答助手。必须严格依据随问题提供的知识库作答，不得编造。知识库中的《00_回答规则.md》是当前正式业务回答规则，必须遵守。回答任何事实数值前，必须先完成唯一性判断；若当前问题不能唯一确定专题、指标、筛选条件和时间所对应的事实，禁止输出任何候选事实或候选数值，只能提出一个最必要的简短澄清问题。对于任何时序指标，最终答案必须保留实际采用事实行的时间口径；即使时间由“最新可用”规则自动选出，也不得省略。按专题、组件/指标、分类条件和时间顺序匹配事实。优先采用事实表中对应行的推荐回答，可以自然改写，但不得改变数值、单位、时间口径或筛选条件。无法唯一匹配时只提出一个简短澄清问题。不得输出内部字段名、文件名、检索过程，也不得推断知识库没有提供的事实。"
+  },
+  "knowledge_base": {
+    "dir": "knowedge",
+    "max_file_chars": 500000,
+    "max_total_chars": 1200000
+  },
+  "upload": {
+    "dir": "data/uploads",
+    "max_file_size_mb": 64,
+    "max_file_chars": 500000
+  },
+  "sessions": {
+    "max_history": 20
+  },
+  "callback": {
+    "token": "REPLACE_WITH_CALLBACK_X_AUTH_TOKEN_OR_LEAVE_EMPTY"
+  }
+}

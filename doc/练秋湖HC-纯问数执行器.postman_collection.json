@@ -1,0 +1,15 @@
+{
+  "info": {
+    "name": "练秋湖HC-纯问数执行器",
+    "description": "练秋湖 HC2026 纯问数执行器接口测试集合。默认地址为本机 18034；不包含任何真实 Token 或生产 IP。",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{"key": "baseUrl", "value": "http://127.0.0.1:18034", "type": "string"}],
+  "item": [
+    {"name": "健康检查", "request": {"method": "GET", "header": [], "url": "{{baseUrl}}/api/health"}},
+    {"name": "直接问答", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"question\": \"示例问题：请根据已导入的 HC 数据回答。\"\n}"}, "url": "{{baseUrl}}/api/chat"}},
+    {"name": "指令 - AI智能问答", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"commands\": [\n    {\n      \"action\": \"AI智能问答\",\n      \"params\": {\"问题\": \"示例问题：请根据已导入的 HC 数据回答。\"}\n    }\n  ]\n}"}, "url": "{{baseUrl}}/api/commands"}},
+    {"name": "指令 - AI问答会话重置", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"commands\": [\n    {\"action\": \"AI问答会话重置\", \"params\": {}}\n  ]\n}"}, "url": "{{baseUrl}}/api/commands"}},
+    {"name": "指令 - 带 context/callback 示例", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"context\": {\n    \"agent\": \"HC_DATA_AGENT_EXAMPLE\",\n    \"reply_to\": \"example-user-id\",\n    \"callback\": \"http://127.0.0.1:19000/example/callback\",\n    \"groupchat\": false\n  },\n  \"commands\": [\n    {\"action\": \"AI智能问答\", \"params\": {\"问题\": \"示例问题：请根据已导入的 HC 数据回答。\"}}\n  ]\n}"}, "url": "{{baseUrl}}/api/commands"}}
+  ]
+}
