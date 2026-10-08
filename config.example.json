@@ -4,9 +4,9 @@
     "port": 18034
   },
   "deepseek": {
-    "base_url": "https://api.siliconflow.cn/v1",
-    "api_key": "YOUR_SILICONFLOW_API_KEY",
-    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "base_url": "https://api.deepseek.com",
+    "api_key": "YOUR_DEEPSEEK_API_KEY",
+    "model": "deepseek-flash",
     "thinking": "enabled",
     "reasoning_effort": "medium",
     "max_tokens": 8192,
