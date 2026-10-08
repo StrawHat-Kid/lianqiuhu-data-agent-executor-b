@@ -6,7 +6,7 @@
   "deepseek": {
     "base_url": "https://api.siliconflow.cn/v1",
     "api_key": "YOUR_SILICONFLOW_API_KEY",
-    "model": "deepseek-ai/DeepSeek-V4-Flash",
+    "model": "deepseek-ai/DeepSeek-V4.1-Flash",
     "thinking": "enabled",
     "reasoning_effort": "medium",
     "max_tokens": 8192,
